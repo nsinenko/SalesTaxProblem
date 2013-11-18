@@ -6,7 +6,7 @@ describe Receipt do
 			products = [
 				Product.new(name: "imported bottle of perfume", price: 1.50),
 				Product.new(name: "bottle of perfume", price: 1.75),
-				Product.new(name: "packet of headache pills", price: 1.90),
+				Product.new(name: "packet of headache pills", price: 1.95),
 				Product.new(name: "box of imported chocolates", price: 1.65)
 			]
 
@@ -27,7 +27,7 @@ describe Receipt do
 		    end
 
 		    it "returns a correct total" do
-		    	expect(@receipt.total).to eq 17.30
+		    	expect(@receipt.total).to eq 17.45
 		    end
 	    end
 	end

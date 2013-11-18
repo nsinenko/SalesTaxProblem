@@ -36,7 +36,7 @@ describe Product do
 		    end
 
 		    it "returns a zero price" do
-		    	@product.price.should eql(0)
+		    	@product.price.should eql(0.0)
 			end
 		end
 	end

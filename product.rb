@@ -3,6 +3,6 @@ class Product
 
 	def initialize(args = {})
 		@name = args[:name] || ""
-		@price = args[:price] || 0
+		@price = args[:price].to_f || 0
 	end
 end
