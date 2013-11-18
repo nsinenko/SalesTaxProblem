@@ -19,7 +19,7 @@ describe Printer do
 
 	describe "#new" do
 	    it "returns a Printer object" do
-	        expect(item).to be_an_instance_of Printer
+	        expect(@printer).to be_an_instance_of Printer
 	    end
 	end
 
