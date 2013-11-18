@@ -18,6 +18,10 @@ class Item
 		product.price + tax_on_product
 	end
 
+	def to_s
+		"#{quantity}, #{@product.name}, %.2f" %total
+	end
+
 private
 	def tax_on_product
 		Tax.new(product).total_tax

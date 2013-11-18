@@ -24,7 +24,7 @@ describe Item do
 
 	describe "to_s" do
 		it "returns CSV output" do
-			expect(item.to_s).to eq "2,music CD,4.40"
+			expect(item.to_s).to eq "2, music CD, 4.40"
 		end
 	end
 end
