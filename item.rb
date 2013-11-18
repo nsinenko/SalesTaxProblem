@@ -1,6 +1,6 @@
 class Item
 	attr_reader :quantity, :product
-	
+
 	def initialize(args)
 		@quantity = args[:quantity]
 		@product = args[:product]
