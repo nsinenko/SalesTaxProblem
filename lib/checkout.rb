@@ -5,7 +5,7 @@ class Checkout
 		@receipt = Receipt.new
 
 		input.lines.to_a[1..-1].each do |line|
-			receipt.add_item(to_receipt_item(line))
+			receipt.add_item line_to_item(line)
 		end
 	end
 
@@ -14,7 +14,7 @@ class Checkout
 	end
 
 	private
-	def to_receipt_item(line)
+	def line_to_item(line)
 		quantity, name, price = line.gsub(', ',',').split(',')
 		Item.new(quantity: quantity.to_i, product: Product.new(name: name, price: price))
 	end
