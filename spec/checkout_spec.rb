@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Checkout do
 	let(:checkout) { Checkout.new(checkout_input) }
 
-	describe "#new" do
+	describe ".new" do
 	    it "returns an Checkout object" do
 	        expect(checkout).to be_an_instance_of Checkout
 	    end
@@ -17,7 +17,7 @@ describe Checkout do
 	    end
 	end
 
-	describe "print_receipt" do
+	describe ".print_receipt" do
 		it "prints out correct receipt" do
 			expect(checkout.print_receipt).to eq expected_output
 		end

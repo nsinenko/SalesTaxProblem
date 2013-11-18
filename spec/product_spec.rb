@@ -6,7 +6,7 @@ describe Product do
 			@product = Product.new(name: 'Milk', price: 2.00)
 		end
 
-		describe "#new" do
+		describe ".new" do
 		    it "returns a Product object" do
 		        @product.should be_an_instance_of Product
 		    end
@@ -26,7 +26,7 @@ describe Product do
 			@product = Product.new
 		end
 
-		describe "#new" do
+		describe ".new" do
 		    it "returns a Product object" do
 		        @product.should be_an_instance_of Product
 		    end

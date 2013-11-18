@@ -6,13 +6,13 @@ describe Tax do
 		Tax.new(product)
 	end
 
-	describe "new" do
+	describe ".new" do
 		it "return a tax object" do
 		    expect(tax_on("name")).to be_an_instance_of Tax
 	    end
 	end
 
-	describe "total_tax" do
+	describe ".total_tax" do
 		context "when products are tax-free" do
 			it "returns a zero tax on food" do
 				tax_on("box of chocolates").total_tax.should eq 0
