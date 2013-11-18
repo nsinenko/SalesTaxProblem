@@ -11,7 +11,7 @@ describe Product do
 	    end
 
 	    it "returns a correct name" do
-	    	@product.name.should.eql('Milk')
+	    	@product.name.should eql('Milk')
 	    end
 
 	    it "returns a correct price" do
