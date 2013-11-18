@@ -17,28 +17,32 @@ describe Receipt do
 			end
 	    end
 
-    	it "returns a Receipt object" do
-	        expect(@receipt).to be_an_instance_of Receipt
-	    end
+	    describe "#new" do
+	    	it "returns a Receipt object" do
+		        expect(@receipt).to be_an_instance_of Receipt
+		    end
 
-       	it "has four items" do
-	        expect(@receipt).to have(4).items
-	    end
+	       	it "has four items" do
+		        expect(@receipt).to have(4).items
+		    end
 
-	    it "returns a correct total" do
-	    	expect(@receipt.total).to eq 17.45
+		    it "returns a correct total" do
+		    	expect(@receipt.total).to eq 17.45
+		    end
 	    end
 	end
 
 	context "receipt with zero items" do
 		subject(:receipt) { Receipt.new }
 
-		it { should be_an_instance_of Receipt }
+		describe "#new" do
+			it { should be_an_instance_of Receipt }
 
-		it { should have(0).items }
+			it { should have(0).items }
 
-	    it "returns a zero total" do
-	    	expect(receipt.total).to eq 0
-	    end
+		    it "returns a zero total" do
+		    	expect(receipt.total).to eq 0
+		    end
+		end
 	end
 end
