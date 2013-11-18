@@ -13,3 +13,10 @@ expected_output = <<EOS
 Sales Taxes: 1.50
 Total: 29.83
 EOS
+
+checkout_input = <<EOS
+Quantity, Product, Price
+1, book, 12.49
+1, music cd, 14.99
+1 chocolate bar, 0.85
+EOS
