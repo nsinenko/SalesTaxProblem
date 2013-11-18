@@ -1,4 +1,4 @@
-class ReceiptItem
+class Item
 	attr_reader :quantity, :product
 	
 	def initialize(args)

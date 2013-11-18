@@ -13,7 +13,7 @@ describe Receipt do
 			@receipt = Receipt.new
 
 			products.each_with_index do |product, index|
-				@receipt.add_item ReceiptItem.new(quantity: index + 1, product: product)
+				@receipt.add_item Item.new(quantity: index + 1, product: product)
 			end
 	    end
 
