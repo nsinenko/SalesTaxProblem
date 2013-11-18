@@ -3,8 +3,7 @@ require 'spec_helper'
 describe Tax do
 	def tax_on(name)
 		product = Product.new(name: name, price: 10)
-		item = Item.new(quantity: 2, product: product )
-		Tax.new(item)
+		Tax.new(product)
 	end
 
 	describe "new" do
@@ -30,11 +29,11 @@ describe Tax do
 
 		context "when product are taxable" do 
 			it "returns correct sales tax on" do
-				tax_on("bottle of perfume").total_tax.should eq 2.00
+				tax_on("bottle of perfume").total_tax.should eq 1.00
 			end
 
 			it "returns correct sales tax including import duty" do
-				tax_on("bottle of imported perfume").total_tax.should eq 2.10
+				tax_on("bottle of imported perfume").total_tax.should eq 1.05
 			end
 		end
 	end
