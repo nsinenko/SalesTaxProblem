@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe ReceiptItem do
-	let(:product) { Product.new(:name => 'Milk', :price => 2.00) }
-	let(:receipt_item) { ReceiptItem.new(:quantity => 2, :product => product) }
+	let(:product) { Product.new(name: 'Milk', price: 2.00) }
+	let(:receipt_item) { ReceiptItem.new(quantity: 2, product: product) }
 
 	describe "#new" do
 	    it "returns a ReceiptItem object" do

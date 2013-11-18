@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Product do
 	context "with two arguments" do
 		before :all do
-			@product = Product.new(:name => 'Milk', :price => 2.00)
+			@product = Product.new(name: 'Milk', price: 2.00)
 		end
 
 		describe "#new" do
