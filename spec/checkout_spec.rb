@@ -4,7 +4,7 @@ describe Checkout do
 	let(:checkout) { Checkout.new(checkout_input) }
 
 	describe "#new" do
-	    it "returns an Item object" do
+	    it "returns an Checkout object" do
 	        expect(checkout).to be_an_instance_of Checkout
 	    end
 
@@ -13,7 +13,7 @@ describe Checkout do
 	    end
 
 	    it "has 3 receipt items" do
-	    	expect(item.receipt).to have(3).items
+	    	expect(checkout.receipt).to have(3).items
 	    end
 	end
 

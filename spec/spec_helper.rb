@@ -5,7 +5,8 @@ require_relative '../lib/tax'
 require_relative '../lib/printer'
 require_relative '../lib/checkout'
 
-expected_output = <<EOS
+def expected_output
+output = <<EOS
 1, book, 12.49
 1, music CD, 16.49
 1, chocolate bar, 0.85
@@ -13,10 +14,13 @@ expected_output = <<EOS
 Sales Taxes: 1.50
 Total: 29.83
 EOS
+end
 
-checkout_input = <<EOS
+def checkout_input
+output = <<EOS
 Quantity, Product, Price
 1, book, 12.49
-1, music cd, 14.99
-1 chocolate bar, 0.85
+1, music CD, 14.99
+1, chocolate bar, 0.85
 EOS
+end
