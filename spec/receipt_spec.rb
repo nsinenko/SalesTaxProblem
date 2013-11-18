@@ -30,7 +30,7 @@ describe Receipt do
 	    end
 
   	    it "returns a correct sales tax" do
-	    	expect(@receipt.sales_tax).to eq 17.45
+	    	expect(@receipt.sales_tax).to eq 0.50
 	    end
 	end
 
@@ -46,7 +46,7 @@ describe Receipt do
 	    end
 
 	    it "returns a zero total" do
-	    	expect(@receipt.sales_tax).to eq 0
+	    	expect(receipt.sales_tax).to eq 0
 	    end
 	end
 end
