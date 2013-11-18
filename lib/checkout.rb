@@ -10,13 +10,12 @@ class Checkout
 	end
 
 	def print_receipt
-		Printer.print_receipt(@receipt)
+		Printer.print_receipt(receipt)
 	end
 
 	private
 	def to_receipt_item(line)
 		quantity, name, price = line.gsub(', ',',').split(',')
-		product = Product.new(name: name, price: price)
-		item = Item.new(quantity: quantity.to_i, product: product)
+		Item.new(quantity: quantity.to_i, product: Product.new(name: name, price: price))
 	end
 end
