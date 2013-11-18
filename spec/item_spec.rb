@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Item do
-	let(:product) { Product.new(name: 'Milk', price: 2.00) }
+	let(:product) { Product.new(name: 'chocolate', price: 2.00) }
 	let(:item) { Item.new(quantity: 2, product: product) }
 
 	describe "#new" do
@@ -18,7 +18,7 @@ describe Item do
 		end
 
 		it "returns a correct total" do
-			expect(item.total).to eq 4.00
+			expect(item.total).to eq 4.0
 		end
 	end
 end

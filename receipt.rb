@@ -10,11 +10,10 @@ class Receipt
 	end
 
 	def total
-		items.map(&:total).reduce(:+) || 0
+		(items.map(&:total).reduce(:+) || 0).round(2)
 	end
 
 	def sales_tax
-		taxes = items.collect { |i| Tax.new(i) }
-		taxes.map(&:total_tax).reduce(:+) || 0
+		(items.map(&:tax).reduce(:+) || 0).round(2)
 	end
 end

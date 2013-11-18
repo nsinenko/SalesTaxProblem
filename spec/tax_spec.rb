@@ -33,7 +33,7 @@ describe Tax do
 			end
 
 			it "returns correct sales tax including import duty" do
-				tax_on("bottle of imported perfume").total_tax.should eq 1.05
+				tax_on("bottle of imported perfume").total_tax.should eq 1.5
 			end
 		end
 	end

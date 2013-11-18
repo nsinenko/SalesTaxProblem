@@ -2,11 +2,12 @@ class Tax
 	TAXFREE = ["book", "chocolate", "pills"]
 	TAXFREE_REGEX = Regexp.new(TAXFREE.join("|"))
 
-	attr_reader :item, :product_name
+	attr_reader :product, :product_name, :price
 
-	def initialize(item)
-		@item = item
-		@product_name = item.product.name
+	def initialize(product)
+		@product = product
+		@product_name = product.name
+		@price = product.price
 	end
 
 	def total_tax
@@ -14,16 +15,12 @@ class Tax
 	end
 
 private
-	def round(amount)
-		(amount * 20).round / 20.0
-	end
-
 	def sales_tax
-		(item.total * 0.1 if taxable?) || 0
+		(price * 0.10 if taxable?) || 0
 	end
 
 	def import_tax
-		(sales_tax * 0.05 if imported?) || 0
+		(price * 0.05 if imported?) || 0
 	end
 
 	def taxable?
@@ -32,5 +29,9 @@ private
 
 	def imported?
 		product_name.include?('imported')
+	end
+
+	def round(amount)
+		(amount * 20).ceil / 20.0
 	end
 end

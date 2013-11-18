@@ -7,6 +7,19 @@ class Item
 	end
 
 	def total
-		product.price * quantity
+		after_tax_price * quantity
+	end
+
+	def tax
+		tax_on_product * quantity
+	end
+
+	def after_tax_price
+		product.price + tax_on_product
+	end
+
+private
+	def tax_on_product
+		Tax.new(product).total_tax
 	end
 end
