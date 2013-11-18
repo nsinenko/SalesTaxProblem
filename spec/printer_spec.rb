@@ -1,5 +1,14 @@
 require 'spec_helper'
 
+expected_output = <<EOS
+1, book, 12.49
+1, music CD, 16.49
+1, chocolate bar, 0.85
+
+Sales Taxes: 1.50
+Total: 29.83
+EOS
+
 describe Printer do
 	before (:all) do
 		products = [
@@ -8,30 +17,16 @@ describe Printer do
 			Product.new(name: "chocolate bar", price: 0.85),
 		]
 
-		receipt = Receipt.new
+		@receipt = Receipt.new
 
 		products.each_with_index do |product, index|
-			receipt.add_item Item.new(quantity: 1, product: product)
+			@receipt.add_item Item.new(quantity: 1, product: product)
 		end
-
-		@printer = Printer.new(receipt)
     end
-
-	describe "#new" do
-	    it "returns a Printer object" do
-	        expect(@printer).to be_an_instance_of Printer
-	    end
-	end
 
 	describe "#print" do
 		it "returns formatted output" do
-			output = <<EOS
-1, music CD, 16.49
-1, chocolate bar, 0.85
-
-Sales Taxes: 1.50
-Total: 29.83
-EOS
+		 	Printer.print_receipt(@receipt).should eq expected_output
 		end
 	end
 end

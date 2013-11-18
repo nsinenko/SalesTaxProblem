@@ -1,17 +1,11 @@
-class Printer
-	attr_reader :receipt
-
-	def initialize(receipt)
-		@receipt = receipt
-	end
-
-	def print
+module Printer
+	def self.print_receipt(receipt)
 		output = ""
-		items.each do |item|
-			output += "item\n"
+		receipt.items.each do |item|
+			output += "#{item}\n"
 		end
 
-		output += "Sales Taxes: %.2f" %sales_tax
-		output += "Total: %.2f" %total
+		output += "\nSales Taxes: %.2f\n" %receipt.sales_tax
+		output += "Total: %.2f\n" %receipt.total
 	end
 end
