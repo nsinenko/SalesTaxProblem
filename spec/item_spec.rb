@@ -5,7 +5,7 @@ describe Item do
 	let(:item) { Item.new(quantity: 2, product: product) }
 
 	describe "#new" do
-	    it "returns a Item object" do
+	    it "returns an Item object" do
 	        expect(item).to be_an_instance_of Item
 	    end
 
