@@ -1,14 +1,5 @@
 require 'spec_helper'
 
-expected_output = <<EOS
-1, book, 12.49
-1, music CD, 16.49
-1, chocolate bar, 0.85
-
-Sales Taxes: 1.50
-Total: 29.83
-EOS
-
 describe Printer do
 	before (:all) do
 		products = [

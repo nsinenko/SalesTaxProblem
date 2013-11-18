@@ -47,11 +47,7 @@ describe Receipt do
 			end
 	    end
 
-    	it "returns a Receipt object" do
-	        expect(@receipt).to be_an_instance_of Receipt
-	    end
-
-       	it "has four items" do
+     	it "has four items" do
 	        expect(@receipt).to have(2).items
 	    end
 
@@ -78,10 +74,6 @@ describe Receipt do
 			products.each_with_index do |product, index|
 				@receipt.add_item Item.new(quantity: 1, product: product)
 			end
-	    end
-
-    	it "returns a Receipt object" do
-	        expect(@receipt).to be_an_instance_of Receipt
 	    end
 
        	it "has four items" do
