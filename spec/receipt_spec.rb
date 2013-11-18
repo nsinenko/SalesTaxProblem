@@ -44,5 +44,9 @@ describe Receipt do
 	    it "returns a zero total" do
 	    	expect(receipt.total).to eq 0
 	    end
+
+	    it "returns a zero total" do
+	    	expect(@receipt.sales_tax).to eq 0
+	    end
 	end
 end
